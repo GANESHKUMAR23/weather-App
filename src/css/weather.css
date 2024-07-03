@@ -1,0 +1,232 @@
+
+
+.container{
+    width: 500px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.19);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.27);
+
+}
+.search-box{
+    width: 100%;
+    border: 2px solid gray;
+    border-radius: 7px;
+    display: flex;
+    overflow: hidden;
+}
+
+.search-box #search{
+    width: 100%;
+    height: 100%;
+    border: none;
+    flex: 1;
+    outline: none;
+    background: rgba(255, 255, 255, 0.19);
+    color: navy;
+    letter-spacing: 1px;
+    font-size: 18px;
+    font-weight: 530;
+    padding: 5px 8px;
+    text-transform: capitalize;
+}
+.search-icon{
+    cursor: pointer;
+    position: absolute;
+    font-size: 20px;
+    right: 23px;
+    top: 17px;
+}
+.search-icon:active{
+    scale: 0.8;
+}
+.content-box{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+.weather-row{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.content-box .weather-row .weather-icon{
+    width: 150px;
+    height: 150px;
+    padding: 5px;
+}
+.content-box .weather-row .weather-icon img{
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.content-box .weather-row .weather-desc{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 20px;
+}
+.content-box .weather-row .weather-desc .descprition{
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 27px;
+    text-transform: capitalize;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.content-box .weather-row .weather-desc .feelsLike{
+    color: #fff;
+    font-weight: 500;
+    font-size: 17px;
+}
+.degree{
+    position: relative;
+    top: -4px;
+    font-size: 14px;
+    margin-left: 1px;
+}
+.degreeTemp{
+    font-size: 20px;
+    position: relative;
+    top: -9px;
+    left: -3px;
+}
+.content-box .weather-temp {
+    color:#ff3838 ;
+    font-size: 30px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.content-box .weather-details{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.city{
+    color: #706fd3;
+    font-size: 27px;
+    font-weight: 500;
+}
+.country{
+    color: #218c74;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.angles{
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+.angles .lon,.angles .lat{
+    margin-top: 7px;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 500;
+    text-transform: capitalize;
+    color:#ff5252 ;
+}
+
+.content-box2{
+    margin: 20px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+.content-box2 .element{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.element span:nth-child(1){
+    color: #3c6382;
+    font-size: 17px;
+}
+.element span:nth-child(2){
+    color: #626429f4;
+    letter-spacing: .3px;
+    text-transform: capitalize;
+    
+}
+.element i{
+    font-size: 25px;
+    position: relative;
+    top: 5px;
+    color: #0a3d62;
+}
+.info{
+    color: #4d565c !important;
+    font-size: 16px !important;
+    position: relative;
+    top: 4px !important;
+    cursor: pointer;
+}
+
+
+.i-icon{
+    max-width: 180px;
+    position: absolute;
+    background: lavender;
+    font-size: 12px;
+    text-align: justify;
+    padding: 7px;
+    z-index: 10;
+    border-radius: 4px;
+    font-style: normal;
+    color: #2c2c54 !important;
+    font-weight: 500;
+}
+.windTitle{
+    color: #3d3d3d;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+.wind-info{
+    right: 25px;
+    bottom: 87px;
+}
+.humidity-icon{
+    right: 100px;
+    bottom: 87px;
+}
+.visibility-icon{
+    right: 205px;
+    bottom: 87px;
+}
+.pressure-icon{
+    right: 300px;
+    bottom: 87px;
+}
+
+
+.footer{
+    border-top: 1px solid grey;
+    padding-top: 5px;
+    margin-top: 30px;
+    text-align: center;
+    font-style: italic;
+    color: #fff;
+    letter-spacing: .4px;
+}
+.footer span{
+    font-style: normal;
+    color: #2c2c54;
+    font-weight: 600;
+}
