@@ -180,16 +180,16 @@
 
 
 .i-icon{
-    max-width: 180px;
+    width: 200px;
     position: absolute;
-    background: lavender;
+    background: linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.9));
     font-size: 12px;
     text-align: justify;
     padding: 7px;
     z-index: 10;
     border-radius: 4px;
     font-style: normal;
-    color: #2c2c54 !important;
+    color: #34495e !important;
     font-weight: 500;
 }
 .windTitle{
@@ -207,11 +207,13 @@
     bottom: 87px;
 }
 .visibility-icon{
+    width: 150px !important;
+    min-width: 150px !important;
     right: 205px;
     bottom: 87px;
 }
 .pressure-icon{
-    right: 300px;
+    left: 30px;
     bottom: 87px;
 }
 

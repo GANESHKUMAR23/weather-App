@@ -17,10 +17,7 @@
 .background{
     width: 100%;
     height: 100%;
-    /* background:#2c2d2b; */
-    /* background-image: url('./assets/skyBackground.jpg'); */
     background-image: url('./assets/colorBg.jpg');
-    /* background-image: url('./assets//background-4.jpg'); */
     background-position: center;
     background-size:cover;
     background-repeat: no-repeat;
@@ -30,4 +27,12 @@
     left: 0;
     z-index: -100;
     filter: blur(5px);
+}
+.App{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }

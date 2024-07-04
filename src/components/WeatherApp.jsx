@@ -1,6 +1,6 @@
 import {useEffect, useRef, useState} from 'react';
 import {AnimatePresence, motion} from 'framer-motion';
-// import '../css/weather.css';
+
 import { WiHumidity } from "react-icons/wi";
 import { BsWind } from "react-icons/bs";
 import { LiaTemperatureHighSolid } from "react-icons/lia";
@@ -47,7 +47,7 @@ console.log(weatherIcon['01n']);
 
 
 
-export const WeatherApp = () => {
+export const WeatherApp = ({humidityIcon,setHumidityIcon,visibilityIcon,setVisibilityIcon,pressureIcon,setPressureIcon,windIcon,setWindIcon,containerClick}) => {
 
   const ref = useRef(null);
 
@@ -65,10 +65,10 @@ export const WeatherApp = () => {
   const [description,setDescription] = useState("");
   const [icon,setIcon] = useState("");
 
-  const [windIcon,setWindIcon] = useState(false);
-  const [humidityIcon,setHumidityIcon] = useState(false);
-  const [visibilityIcon,setVisibilityIcon] = useState(false);
-  const [pressureIcon,setPressureIcon] = useState(false);
+  // const [windIcon,setWindIcon] = useState(false);
+  // const [humidityIcon,setHumidityIcon] = useState(false);
+  // const [visibilityIcon,setVisibilityIcon] = useState(false);
+  // const [pressureIcon,setPressureIcon] = useState(false);
 
 
   const pressureInfo = `Pressure is the weight of air in the atmosphere. It is normalized to the standard atmospheric pressure of ${pressure} mb. Higher pressure is usually associated with sunny weather, lower pressure with stormy weather.`;
@@ -181,14 +181,37 @@ export const WeatherApp = () => {
 
   }
 
+  const infoShowIcon = (info) => {
+    // alert(typeof info);
+
+      if(info === "windIcon"){
+        setWindIcon(true);
+      }
+      else if(info === "humidityIcon")
+        setHumidityIcon(true);
+      else if(info === "pressureIcon")
+        setPressureIcon(true);
+      else
+        setVisibilityIcon(true);
+
+  }
+
+  // const containerClick = () => {
+  //     if(windIcon || pressureIcon || humidityIcon || visibilityIcon){
+  //     setWindIcon(false);
+  //     setHumidityIcon(false);
+  //     setPressureIcon(false);
+  //     setVisibilityIcon(false);
+  //     }
+  // }
  
 
 
   return (
     <>
-      <div className="container">
+      <div className="container" onClick={containerClick}>
 
-        <motion.div className="search-box">
+        <motion.div className="search-box" >
           <input type="text" ref={ref} name="search" id="search"  placeholder='search' onChange={handleCity} onKeyDown={handleKeyDown}/>
           <i onClick={searchAPI} className='search-icon' ><FcSearch /></i>
         </motion.div>
@@ -260,6 +283,7 @@ export const WeatherApp = () => {
           <div className="element">
             <span><i><LiaTemperatureHighSolid /></i> {pressure} mb</span>
             <span>Pressure <motion.i className='info info-pressure' 
+              onClick={()=>infoShowIcon("pressureIcon")}
               onHoverStart={() => setPressureIcon(!pressureIcon)}
               onHoverEnd={() => setPressureIcon(!pressureIcon)}
              
@@ -270,7 +294,8 @@ export const WeatherApp = () => {
           </div>
           <div className="element">
             <span><i><GiTiredEye /></i> {Visibility} km</span>
-            <span>Visibility <motion.i className='info info-visibility' 
+            <span>Visibility <motion.i className='info info-visibility'
+              onClick={()=>infoShowIcon("visibilityIcon")}
               onHoverStart={()=>setVisibilityIcon(!visibilityIcon)}
               onHoverEnd={()=>setVisibilityIcon(!visibilityIcon)}
             ><PiInfo /></motion.i></span>
@@ -282,6 +307,7 @@ export const WeatherApp = () => {
           <div className="element">
             <span><i><WiHumidity /></i> {humidity} %</span>
             <span>Humidity <motion.i className='info ' 
+                onClick={()=>infoShowIcon("humidityIcon")}
               onHoverStart={()=>setHumidityIcon(!humidityIcon)}
               onHoverEnd={() => setHumidityIcon(!humidityIcon)}
             ><PiInfo /></motion.i></span>
@@ -292,7 +318,7 @@ export const WeatherApp = () => {
             <span><i><BsWind/></i> {windSpeed} km/h</span>
 
             <motion.span>wind speed <motion.i className='info'
-                enterKeyHint="windIcon"
+                onClick={()=>infoShowIcon("windIcon")}
                 onHoverStart={()=>setWindIcon(!windIcon)}
                 onHoverEnd={() => setWindIcon(!windIcon)}
             >
